@@ -1,0 +1,97 @@
+{
+  "aadhaar": {
+    "123456789012": {
+      "name": "Rahul Sharma",
+      "dob": "1982-05-15",
+      "gender": "Male",
+      "address": "123 Main Street, New Delhi, 110001",
+      "phone": "9876543210"
+    },
+    "234567890123": {
+      "name": "Priya Patel",
+      "dob": "1990-08-21",
+      "gender": "Female",
+      "address": "456 Park Avenue, Mumbai, 400001",
+      "phone": "8765432109"
+    },
+    "345678901234": {
+      "name": "Amit Kumar",
+      "dob": "1975-11-30",
+      "gender": "Male",
+      "address": "789 Lake Road, Bangalore, 560001",
+      "phone": "7654321098"
+    },
+    "456789012345": {
+      "name": "Sneha Gupta",
+      "dob": "1988-02-10",
+      "gender": "Female",
+      "address": "567 Hill View, Chennai, 600001",
+      "phone": "6543210987"
+    }
+  },
+  "bci": {
+    "BCI12345": {
+      "name": "Vikas Mehta",
+      "legalId": "LEG98765",
+      "hiddenId": "hid123",
+      "email": "vikas.m@legalpro.co.in",
+      "phone": "9876543211",
+      "status": "active",
+      "enrollmentDate": "2010-03-12"
+    },
+    "BCI23456": {
+      "name": "Neha Verma",
+      "legalId": "LEG87654",
+      "hiddenId": "hid456",
+      "email": "neha.v@legalpro.co.in",
+      "phone": "8765432110",
+      "status": "active",
+      "enrollmentDate": "2015-07-25"
+    },
+    "BCI34567": {
+      "name": "Rajesh Shah",
+      "legalId": "LEG76543",
+      "hiddenId": "hid789",
+      "email": "rajesh.s@legalpro.co.in",
+      "phone": "7654321109",
+      "status": "active",
+      "enrollmentDate": "2008-11-08"
+    }
+  },
+  "gov": {
+    "GOV12345": {
+      "name": "Justice Ravi Kumar",
+      "secretId": "JUD98765",
+      "classifiedId": "cls123",
+      "email": "ravi.k@judiciary.gov.in",
+      "phone": "9876543212",
+      "status": "active",
+      "appointmentDate": "2012-06-15",
+      "court": "Delhi High Court"
+    },
+    "GOV23456": {
+      "name": "Justice Anita Singh",
+      "secretId": "JUD87654",
+      "classifiedId": "cls456",
+      "email": "anita.s@judiciary.gov.in",
+      "phone": "8765432111",
+      "status": "active",
+      "appointmentDate": "2014-09-20",
+      "court": "Mumbai High Court"
+    },
+    "GOV34567": {
+      "name": "Justice Sunil Kapoor",
+      "secretId": "JUD76543",
+      "classifiedId": "cls789",
+      "email": "sunil.k@judiciary.gov.in",
+      "phone": "7654321110",
+      "status": "active",
+      "appointmentDate": "2010-02-28",
+      "court": "Supreme Court"
+    }
+  },
+  "passkeys": {
+    "legal": "legalpass123",
+    "judiciary": "judiciarypass456"
+  }
+}

@@ -1,0 +1,138 @@
+# DOJ India AI Legal Assistant - Project Setup Guide
+
+This guide will help you set up the DOJ India AI Legal Assistant (Jasper) project from scratch.
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (v4.4 or higher)
+- npm or yarn
+
+## Quick Setup
+
+Follow these steps to get the project up and running quickly:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-repo/jasper-legal-assistant.git
+cd jasper-legal-assistant
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Up MongoDB
+
+Make sure MongoDB is installed and running on your system. For detailed MongoDB setup, refer to [MONGODB_SETUP.md](MONGODB_SETUP.md).
+
+### 4. Create .env File
+
+Create a `.env` file in the root directory with the following content:
+
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/jasper-legal-assistant
+JWT_SECRET=your_secret_key_change_this_in_production
+NODE_ENV=development
+CONFIG_ENCRYPTION_KEY=your_encryption_key_for_config_change_this_in_production
+```
+
+### 5. Prepare Sample Documents
+
+Create the directory structure for sample documents:
+
+```bash
+mkdir -p scripts/sample_docs
+```
+
+Copy the sample document files to this directory.
+
+### 6. Seed the Database
+
+```bash
+npm run seed
+```
+
+This will populate your database with initial data, including:
+- Sample users of all types (public, legal, judiciary)
+- Legal documents with different access levels
+- System configurations
+
+### 7. Start the Server
+
+```bash
+# Development mode with auto-reload
+npm run dev
+
+# OR Production mode
+npm start
+```
+
+### 8. Access the Application
+
+Open your browser and navigate to:
+- Main application: http://localhost:5000
+- Admin panel: http://localhost:5000/admin.html
+
+## User Access Information
+
+### Public Users
+- Register through the signup form with all fields
+- Or login with email and password for existing users
+
+### Legal Professionals
+1. Go to the signup form
+2. Leave all fields empty
+3. Enter only the passkey in the "Confirm Password" field: `legalpass123`
+4. Click "Access System" to enter directly
+
+### Judiciary Members
+1. Go to the signup form
+2. Leave all fields empty
+3. Enter only the secret code in the "Password" field: `judiciarypass456`
+4. Click "Access System" to enter directly
+
+### Admin Panel
+- URL: http://localhost:5000/admin.html
+- Password: `Zefolicus-trident@123`
+
+## Project Structure
+
+```
+jasper-legal-assistant/
+├── backend/           # Server-side code
+├── frontend/          # Client-side code
+├── data/              # Preloaded verification data
+├── scripts/           # Setup and utility scripts
+│   └── sample_docs/   # Sample document files
+├── docs/              # Documentation
+├── .env               # Environment variables
+└── package.json       # Project dependencies
+```
+
+## Troubleshooting
+
+### Server Won't Start
+- Check if MongoDB is running
+- Verify the connection string in `.env`
+- Check for port conflicts
+
+### Database Seeding Issues
+- Ensure MongoDB is running and accessible
+- Check if sample document files exist in the correct location
+- Check MongoDB permissions
+
+### Authentication Issues
+- For legal professionals: Make sure to use ONLY the passkey in the confirm password field
+- For judiciary members: Make sure to use ONLY the secret code in the password field
+- For admin panel: Verify you're using the correct password
+
+## Additional Resources
+
+- [MongoDB Setup Guide](MONGODB_SETUP.md)
+- [API Documentation](API_DOCS.md)
+- [Project README](../README.md)

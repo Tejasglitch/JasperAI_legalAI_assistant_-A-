@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasper AI - DOJ India Legal Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">DOJ</div>
+                    <div class="logo-text">Jasper AI</div>
+                </div>
+                <button class="toggle-btn" id="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">John Doe</h3>
+                    <p class="user-type">Public User</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-divider">
+                <span>Chat History</span>
+            </div>
+
+            <div class="chat-history" id="chat-history">
+                <div class="empty-history-message">
+                    <i class="fas fa-comment-slash"></i>
+                    <p>No chat history yet</p>
+                </div>
+                <!-- Chat history items will be loaded here -->
+                <!-- Example:
+                <div class="history-item">
+                    <div class="history-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="history-details">
+                        <h4>Property Registration</h4>
+                        <p>Last updated: 2 hours ago</p>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="new-chat-btn" id="new-chat-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Chat</span>
+                </button>
+                <button class="logout-btn" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="chat-header">
+                <h1>Jasper AI</h1>
+                <p>AI Legal Assistant</p>
+                <div class="header-actions">
+                    <button class="action-btn" id="share-btn" title="Share Conversation">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn" id="download-btn" title="Download Transcript">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <div class="dropdown">
+                        <button class="action-btn" id="options-btn" title="Options">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-content" id="options-dropdown">
+                            <a href="#" id="voice-toggle">
+                                <i class="fas fa-microphone"></i>
+                                Voice Assistant
+                            </a>
+                            <a href="#" id="settings-btn">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <a href="#" id="help-btn">
+                                <i class="fas fa-question-circle"></i>
+                                Help
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome message -->
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <h3>Welcome to Jasper, your AI-powered legal assistant!</h3>
+                            <p>I provide instant, accurate information on Indian law and judiciary. How can I help you today?</p>
+                        </div>
+                        <div class="suggestion-cards">
+                            <div class="suggestion-card" data-query="Tell me about arrest rights">
+                                <div class="card-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4>Arrest Rights</h4>
+                                <p>Learn about your legal rights when arrested</p>
+                            </div>
+                            <div class="suggestion-card" data-query="How do I file a consumer complaint?">
+                                <div class="card-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h4>Consumer Complaints</h4>
+                                <p>Steps to file a consumer complaint</p>
+                            </div>
+                            <div class="suggestion-card" data-query="How to file an FIR?">
+                                <div class="card-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <h4>Filing an FIR</h4>
+                                <p>Process and requirements for filing an FIR</p>
+                            </div>
+                            <div class="suggestion-card" data-query="Property registration process">
+                                <div class="card-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h4>Property Registration</h4>
+                                <p>Required documents and process</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More messages will be added here during chat -->
+            </div>
+
+            <div class="chat-input">
+                <form id="chat-form">
+                    <div class="input-container">
+                        <input type="text" id="message-input" placeholder="Type to know the legal measures..." autocomplete="off">
+                        <button type="button" id="upload-btn" class="upload-btn" title="Upload Document">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="file" id="file-upload" hidden accept=".pdf,.docx,.txt">
+                        <button type="button" id="voice-btn" class="voice-btn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button type="submit" id="send-btn" class="send-btn" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Document</h2>
+                <button class="close-btn" id="close-upload-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop your file here</p>
+                    <p>or</p>
+                    <button class="browse-btn" id="browse-btn">Browse Files</button>
+                    <p class="file-info">Supports: PDF, DOCX, TXT (Max 10MB)</p>
+                </div>
+                <div class="upload-preview" id="upload-preview" style="display: none;">
+                    <div class="preview-header">
+                        <i class="fas fa-file-alt"></i>
+                        <h4 id="upload-filename">document.pdf</h4>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="upload-progress"></div>
+                    </div>
+                    <p id="upload-status">Uploading...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancel-upload">Cancel</button>
+                <button class="submit-btn" id="submit-upload">Upload & Analyze</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/chat.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+</body>
+</html>

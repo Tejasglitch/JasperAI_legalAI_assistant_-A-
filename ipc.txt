@@ -1,0 +1,47 @@
+THE INDIAN PENAL CODE, 1860
+ACT NO. 45 OF 1860
+[6th October, 1860]
+
+CHAPTER I
+INTRODUCTION
+
+1. Title and extent of operation of the Code.—This Act shall be called the Indian Penal Code, and shall extend to the whole of India except the State of Jammu and Kashmir.
+
+2. Punishment of offences committed within India.—Every person shall be liable to punishment under this Code and not otherwise for every act or omission contrary to the provisions thereof, of which he shall be guilty within India.
+
+3. Punishment of offences committed beyond, but which by law may be tried within, India.—Any person liable, by any Indian law, to be tried for an offence committed beyond India shall be dealt with according to the provisions of this Code for any act committed beyond India in the same manner as if such act had been committed within India.
+
+4. Extension of Code to extra-territorial offences.—The provisions of this Code apply also to any offence committed by—
+    (1) any citizen of India in any place without and beyond India;
+    (2) any person on any ship or aircraft registered in India wherever it may be;
+    (3) any person in any place without and beyond India committing offence targeting a computer resource located in India.
+
+Explanation.—In this section—
+    (a) the word "offence" includes every act committed outside India which, if committed in India, would be punishable under this Code;
+    (b) the expression "computer resource" shall have the meaning assigned to it in clause (k) of sub-section (1) of section 2 of the Information Technology Act, 2000.
+
+5. Certain laws not to be affected by this Act.—Nothing in this Act shall affect the provisions of any Act for punishing mutiny and desertion of officers, soldiers, sailors or airmen in the service of the Government of India or the provisions of any special or local law.
+
+CHAPTER II
+GENERAL EXPLANATIONS
+
+6. Definitions in the Code to be understood subject to exceptions.—Throughout this Code every definition of an offence, every penal provision, and every illustration of every such definition or penal provision, shall be understood subject to the exceptions contained in the Chapter entitled "General Exceptions", though those exceptions are not repeated in such definition, penal provision, or illustration.
+
+CHAPTER III
+OF PUNISHMENTS
+
+53. Punishments.—The punishments to which offenders are liable under the provisions of this Code are—
+    First.—Death;
+    Secondly.—Imprisonment for life;
+    Thirdly.—Imprisonment, which is of two descriptions, namely:—
+        (1) Rigorous, that is, with hard labour;
+        (2) Simple;
+    Fourthly.—Forfeiture of property;
+    Fifthly.—Fine.
+
+CHAPTER IV
+GENERAL EXCEPTIONS
+
+76. Act done by a person bound, or by mistake of fact believing himself bound, by law.—Nothing is an offence which is done by a person who is, or who by reason of a mistake of fact and not by reason of a mistake of law in good faith believes himself to be, bound by law to do it.
+
+[Content truncated for brevity]

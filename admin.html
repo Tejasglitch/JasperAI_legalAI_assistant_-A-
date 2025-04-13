@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOJ India - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/admin1.css">
+    
+</head>
+<body>
+    <!-- Admin Password Protection Screen -->
+    <div class="admin-login-overlay" id="admin-login-overlay">
+        <div class="admin-login-container">
+            <div class="admin-login-logo">
+                <div class="logo-icon">DOJ</div>
+            </div>
+            <div class="admin-login-form">
+                <h2>Admin Access</h2>
+                <div class="admin-login-error" id="admin-login-error">Incorrect password. Please try again.</div>
+                <input type="password" class="admin-login-input" id="admin-password" placeholder="Enter admin password">
+                <button class="admin-login-btn" id="admin-login-btn">Access Admin Panel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Admin Panel (will be shown after password verification) -->
+    <div class="admin-container" style="display: none;" id="admin-container">
+        <!-- Admin panel content here (all the previous admin panel content) -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">DOJ</div>
+                    <div class="logo-text">Admin Panel</div>
+                </div>
+                <button class="toggle-btn" id="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="admin-profile" id="admin-profile">
+                <!-- Admin profile data will be loaded here -->
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-target="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-target="user-management">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </li>
+                    <li class="nav-item" data-target="document-upload">
+                        <i class="fas fa-file-upload"></i>
+                        <span>Document Upload</span>
+                    </li>
+                    <li class="nav-item" data-target="content-management">
+                        <i class="fas fa-database"></i>
+                        <span>Content Management</span>
+                    </li>
+                    <li class="nav-item" data-target="system-config">
+                        <i class="fas fa-cogs"></i>
+                        <span>System Configuration</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" id="admin-logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <!-- Content sections remain the same as in the original admin.html -->
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard">
+                <!-- Dashboard content -->
+            </section>
+            
+            <!-- User Management Section -->
+            <section class="content-section" id="user-management">
+                <!-- User management content -->
+            </section>
+            
+            <!-- Document Upload Section -->
+            <section class="content-section" id="document-upload">
+                <!-- Document upload content -->
+            </section>
+            
+            <!-- Content Management Section -->
+            <section class="content-section" id="content-management">
+                <!-- Content management content -->
+            </section>
+            
+            <!-- System Configuration Section -->
+            <section class="content-section" id="system-config">
+                <!-- System config content -->
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    <script>
+        // Admin password check
+        document.addEventListener('DOMContentLoaded', function() {
+            const ADMIN_PASSWORD = "Zefolicus-trident@123";
+            const adminLoginOverlay = document.getElementById('admin-login-overlay');
+            const adminContainer = document.getElementById('admin-container');
+            const adminLoginBtn = document.getElementById('admin-login-btn');
+            const adminPasswordInput = document.getElementById('admin-password');
+            const adminLoginError = document.getElementById('admin-login-error');
+            
+            // Check if already logged in
+            if (localStorage.getItem('adminToken') === 'admin-logged-in') {
+                adminLoginOverlay.style.display = 'none';
+                adminContainer.style.display = 'flex';
+            }
+            
+            // Admin login button click handler
+            adminLoginBtn.addEventListener('click', function() {
+                const password = adminPasswordInput.value;
+                
+                if (password === ADMIN_PASSWORD) {
+                    // Set admin token
+                    localStorage.setItem('adminToken', 'admin-logged-in');
+                    
+                    // Hide login overlay and show admin panel
+                    adminLoginOverlay.style.display = 'none';
+                    adminContainer.style.display = 'flex';
+                } else {
+                    // Show error
+                    adminLoginError.style.display = 'block';
+                    adminPasswordInput.value = '';
+                }
+            });
+            
+            // Enter key in password field
+            adminPasswordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    adminLoginBtn.click();
+                }
+            });
+            
+            // Logout button
+            const logoutBtn = document.getElementById('admin-logout-btn');
+            logoutBtn.addEventListener('click', function() {
+                localStorage.removeItem('adminToken');
+                window.location.reload();
+            });
+        });
+    </script>
+</body>
+</html>
